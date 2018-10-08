@@ -1,5 +1,7 @@
 package com.yahoo.ycsb.benfs;
 
+import com.google.protobuf.ByteString;
+import com.yahoo.ycsb.ByteArrayByteIterator;
 import com.yahoo.ycsb.ByteIterator;
 import com.yahoo.ycsb.DB;
 import com.yahoo.ycsb.Status;
@@ -17,8 +19,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-// TODO Implement methods required and properly make this a sub-module before making the pull
-// request.
 public class BenFSClient extends DB {
   private static final Logger logger = Logger.getLogger(BenFSClient.class.getName());
 
@@ -48,13 +48,22 @@ public class BenFSClient extends DB {
   @Override
   public Status read(
       String table, String key, Set<String> fields, Map<String, ByteIterator> result) {
+
     // TODO read certain fields.
+    System.out.println("Fields: " + fields);
+    System.out.println("key " + key);
 
     logger.info("Will try to read " + table + " ...");
-    Client.GetRequest request = Client.GetRequest.newBuilder().setIdentity("test").setKey(key).build();
+    Client.GetRequest request =
+        Client.GetRequest.newBuilder().setIdentity("test").setKey(key).build();
     Client.ClientReply response;
     try {
       response = blockingStub.get(request);
+
+      // Add the returned value to the result
+      ByteIterator value = new ByteArrayByteIterator(response.getPair().getValue().toByteArray());
+      result.put(key, value);
+
     } catch (StatusRuntimeException e) {
       logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
       return Status.ERROR;
@@ -63,6 +72,16 @@ public class BenFSClient extends DB {
     return Status.OK;
   }
 
+  /**
+   * TODO How do we deal with scan?
+   *
+   * @param table The name of the table
+   * @param startkey The record key of the first record to read.
+   * @param recordcount The number of records to read
+   * @param fields The list of fields to read, or null for all of them
+   * @param result A Vector of HashMaps, where each HashMap is a set field/value pairs for one record
+   * @return
+   */
   @Override
   public Status scan(
       String table,
@@ -70,29 +89,62 @@ public class BenFSClient extends DB {
       int recordcount,
       Set<String> fields,
       Vector<HashMap<String, ByteIterator>> result) {
-
-    // Start ben's server which is in go and have it run locally
-
-    // Use GRPC to send a request in the format that the server is waiting for it.
     return null;
   }
 
+  /**
+   * TODO Is this what we want to do with update?
+   * @param table The name of the table
+   * @param key The record key of the record to write.
+   * @param values A HashMap of field/value pairs to update in the record
+   * @return
+   */
   @Override
   public Status update(String table, String key, Map<String, ByteIterator> values) {
-    return null;
+    return insert(table,key,values);
   }
 
   @Override
   public Status insert(String table, String key, Map<String, ByteIterator> values) {
-    return null;
+    logger.info("Will try to read " + table + " ...");
+    String value = values.get(key).toString();
+    Client.PutRequest request =
+        Client.PutRequest.newBuilder()
+            .setIdentity("test")
+            .setKey(key)
+            .setValue(ByteString.copyFrom(value.getBytes()))
+            .build();
+    Client.ClientReply response;
+
+    try {
+      response = blockingStub.put(request);
+
+      // Add the returned value to the result
+      ByteIterator byteIter =
+          new ByteArrayByteIterator(response.getPair().getValue().toByteArray());
+      values.put(key, byteIter);
+    } catch (StatusRuntimeException e) {
+      logger.log(Level.WARNING, "RPC failed: {put}", e.getStatus());
+      return Status.ERROR;
+    }
+    return Status.OK;
   }
 
   @Override
   public Status delete(String table, String key) {
-    return null;
+    Client.DelRequest request = Client.DelRequest.newBuilder().setKey(key).build();
+    Client.ClientReply response;
+
+    try {
+      response = blockingStub.del(request);
+    } catch (StatusRuntimeException e) {
+      logger.log(Level.WARNING, "RPC failed: {del}", e.getStatus());
+      return Status.ERROR;
+    }
+    return Status.OK;
   }
 
-  public static void main(String args[]){
+  public static void main(String args[]) {
     BenFSClient client = new BenFSClient("localhost", 50051);
   }
 }
