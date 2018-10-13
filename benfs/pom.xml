@@ -11,23 +11,13 @@
     <relativePath>../binding-parent</relativePath>
   </parent>
 
-  <groupId>benfs</groupId>
-  <artifactId>benf-binding</artifactId>
+  <artifactId>benfs-binding</artifactId>
   <name>BenFS Storage Binding</name>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
   <packaging>jar</packaging>
-  <version>1.16-SNAPSHOT</version>
+
+  <properties>
+    <checkstyle.skip>true</checkstyle.skip>
+  </properties>
 
   <dependencies>
     <dependency>

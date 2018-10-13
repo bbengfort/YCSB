@@ -25,7 +25,7 @@ public final class Client {
      *
      * <code>string identity = 1;</code>
      */
-    java.lang.String getIdentity();
+    String getIdentity();
     /**
      * <pre>
      * Unique identity for the client, used in benchmarks
@@ -43,7 +43,7 @@ public final class Client {
      *
      * <code>string key = 2;</code>
      */
-    java.lang.String getKey();
+    String getKey();
     /**
      * <pre>
      * Name of the object to get the request for
@@ -71,7 +71,7 @@ public final class Client {
       key_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -82,7 +82,7 @@ public final class Client {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -103,13 +103,13 @@ public final class Client {
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               identity_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               key_ = s;
               break;
@@ -128,18 +128,18 @@ public final class Client {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return pb.Client.internal_static_pb_GetRequest_descriptor;
+      return Client.internal_static_pb_GetRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return pb.Client.internal_static_pb_GetRequest_fieldAccessorTable
+      return Client.internal_static_pb_GetRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              pb.Client.GetRequest.class, pb.Client.GetRequest.Builder.class);
+              GetRequest.class, Builder.class);
     }
 
     public static final int IDENTITY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object identity_;
+    private volatile Object identity_;
     /**
      * <pre>
      * Unique identity for the client, used in benchmarks
@@ -147,14 +147,14 @@ public final class Client {
      *
      * <code>string identity = 1;</code>
      */
-    public java.lang.String getIdentity() {
-      java.lang.Object ref = identity_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getIdentity() {
+      Object ref = identity_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         identity_ = s;
         return s;
       }
@@ -168,11 +168,11 @@ public final class Client {
      */
     public com.google.protobuf.ByteString
         getIdentityBytes() {
-      java.lang.Object ref = identity_;
-      if (ref instanceof java.lang.String) {
+      Object ref = identity_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         identity_ = b;
         return b;
       } else {
@@ -181,7 +181,7 @@ public final class Client {
     }
 
     public static final int KEY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object key_;
+    private volatile Object key_;
     /**
      * <pre>
      * Name of the object to get the request for
@@ -189,14 +189,14 @@ public final class Client {
      *
      * <code>string key = 2;</code>
      */
-    public java.lang.String getKey() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getKey() {
+      Object ref = key_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         key_ = s;
         return s;
       }
@@ -210,11 +210,11 @@ public final class Client {
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
+      Object ref = key_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         key_ = b;
         return b;
       } else {
@@ -259,15 +259,15 @@ public final class Client {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof pb.Client.GetRequest)) {
+      if (!(obj instanceof GetRequest)) {
         return super.equals(obj);
       }
-      pb.Client.GetRequest other = (pb.Client.GetRequest) obj;
+      GetRequest other = (GetRequest) obj;
 
       boolean result = true;
       result = result && getIdentity()
@@ -278,7 +278,7 @@ public final class Client {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -294,69 +294,69 @@ public final class Client {
       return hash;
     }
 
-    public static pb.Client.GetRequest parseFrom(
+    public static GetRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pb.Client.GetRequest parseFrom(
+    public static GetRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pb.Client.GetRequest parseFrom(
+    public static GetRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pb.Client.GetRequest parseFrom(
+    public static GetRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pb.Client.GetRequest parseFrom(byte[] data)
+    public static GetRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pb.Client.GetRequest parseFrom(
+    public static GetRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pb.Client.GetRequest parseFrom(java.io.InputStream input)
+    public static GetRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static pb.Client.GetRequest parseFrom(
+    public static GetRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static pb.Client.GetRequest parseDelimitedFrom(java.io.InputStream input)
+    public static GetRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static pb.Client.GetRequest parseDelimitedFrom(
+    public static GetRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static pb.Client.GetRequest parseFrom(
+    public static GetRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static pb.Client.GetRequest parseFrom(
+    public static GetRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -368,7 +368,7 @@ public final class Client {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(pb.Client.GetRequest prototype) {
+    public static Builder newBuilder(GetRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -376,7 +376,7 @@ public final class Client {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -388,17 +388,17 @@ public final class Client {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:pb.GetRequest)
-        pb.Client.GetRequestOrBuilder {
+        GetRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return pb.Client.internal_static_pb_GetRequest_descriptor;
+        return Client.internal_static_pb_GetRequest_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return pb.Client.internal_static_pb_GetRequest_fieldAccessorTable
+        return Client.internal_static_pb_GetRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                pb.Client.GetRequest.class, pb.Client.GetRequest.Builder.class);
+                GetRequest.class, Builder.class);
       }
 
       // Construct using pb.Client.GetRequest.newBuilder()
@@ -427,23 +427,23 @@ public final class Client {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return pb.Client.internal_static_pb_GetRequest_descriptor;
+        return Client.internal_static_pb_GetRequest_descriptor;
       }
 
-      public pb.Client.GetRequest getDefaultInstanceForType() {
-        return pb.Client.GetRequest.getDefaultInstance();
+      public GetRequest getDefaultInstanceForType() {
+        return GetRequest.getDefaultInstance();
       }
 
-      public pb.Client.GetRequest build() {
-        pb.Client.GetRequest result = buildPartial();
+      public GetRequest build() {
+        GetRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public pb.Client.GetRequest buildPartial() {
-        pb.Client.GetRequest result = new pb.Client.GetRequest(this);
+      public GetRequest buildPartial() {
+        GetRequest result = new GetRequest(this);
         result.identity_ = identity_;
         result.key_ = key_;
         onBuilt();
@@ -455,7 +455,7 @@ public final class Client {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -468,25 +468,25 @@ public final class Client {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof pb.Client.GetRequest) {
-          return mergeFrom((pb.Client.GetRequest)other);
+        if (other instanceof GetRequest) {
+          return mergeFrom((GetRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(pb.Client.GetRequest other) {
-        if (other == pb.Client.GetRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(GetRequest other) {
+        if (other == GetRequest.getDefaultInstance()) return this;
         if (!other.getIdentity().isEmpty()) {
           identity_ = other.identity_;
           onChanged();
@@ -508,11 +508,11 @@ public final class Client {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        pb.Client.GetRequest parsedMessage = null;
+        GetRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (pb.Client.GetRequest) e.getUnfinishedMessage();
+          parsedMessage = (GetRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -522,7 +522,7 @@ public final class Client {
         return this;
       }
 
-      private java.lang.Object identity_ = "";
+      private Object identity_ = "";
       /**
        * <pre>
        * Unique identity for the client, used in benchmarks
@@ -530,16 +530,16 @@ public final class Client {
        *
        * <code>string identity = 1;</code>
        */
-      public java.lang.String getIdentity() {
-        java.lang.Object ref = identity_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getIdentity() {
+        Object ref = identity_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           identity_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -551,11 +551,11 @@ public final class Client {
        */
       public com.google.protobuf.ByteString
           getIdentityBytes() {
-        java.lang.Object ref = identity_;
+        Object ref = identity_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           identity_ = b;
           return b;
         } else {
@@ -570,7 +570,7 @@ public final class Client {
        * <code>string identity = 1;</code>
        */
       public Builder setIdentity(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -611,7 +611,7 @@ public final class Client {
         return this;
       }
 
-      private java.lang.Object key_ = "";
+      private Object key_ = "";
       /**
        * <pre>
        * Name of the object to get the request for
@@ -619,16 +619,16 @@ public final class Client {
        *
        * <code>string key = 2;</code>
        */
-      public java.lang.String getKey() {
-        java.lang.Object ref = key_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getKey() {
+        Object ref = key_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           key_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -640,11 +640,11 @@ public final class Client {
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
-        java.lang.Object ref = key_;
+        Object ref = key_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           key_ = b;
           return b;
         } else {
@@ -659,7 +659,7 @@ public final class Client {
        * <code>string key = 2;</code>
        */
       public Builder setKey(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -714,12 +714,12 @@ public final class Client {
     }
 
     // @@protoc_insertion_point(class_scope:pb.GetRequest)
-    private static final pb.Client.GetRequest DEFAULT_INSTANCE;
+    private static final GetRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new pb.Client.GetRequest();
+      DEFAULT_INSTANCE = new GetRequest();
     }
 
-    public static pb.Client.GetRequest getDefaultInstance() {
+    public static GetRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -737,12 +737,12 @@ public final class Client {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<GetRequest> getParserForType() {
       return PARSER;
     }
 
-    public pb.Client.GetRequest getDefaultInstanceForType() {
+    public GetRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -759,7 +759,7 @@ public final class Client {
      *
      * <code>string identity = 1;</code>
      */
-    java.lang.String getIdentity();
+    String getIdentity();
     /**
      * <pre>
      * Unique identity for the client, used in benchmarks
@@ -777,7 +777,7 @@ public final class Client {
      *
      * <code>string key = 2;</code>
      */
-    java.lang.String getKey();
+    String getKey();
     /**
      * <pre>
      * Name of the object to put the value to
@@ -815,7 +815,7 @@ public final class Client {
       value_ = com.google.protobuf.ByteString.EMPTY;
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -826,7 +826,7 @@ public final class Client {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -847,13 +847,13 @@ public final class Client {
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               identity_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               key_ = s;
               break;
@@ -877,18 +877,18 @@ public final class Client {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return pb.Client.internal_static_pb_PutRequest_descriptor;
+      return Client.internal_static_pb_PutRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return pb.Client.internal_static_pb_PutRequest_fieldAccessorTable
+      return Client.internal_static_pb_PutRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              pb.Client.PutRequest.class, pb.Client.PutRequest.Builder.class);
+              PutRequest.class, Builder.class);
     }
 
     public static final int IDENTITY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object identity_;
+    private volatile Object identity_;
     /**
      * <pre>
      * Unique identity for the client, used in benchmarks
@@ -896,14 +896,14 @@ public final class Client {
      *
      * <code>string identity = 1;</code>
      */
-    public java.lang.String getIdentity() {
-      java.lang.Object ref = identity_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getIdentity() {
+      Object ref = identity_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         identity_ = s;
         return s;
       }
@@ -917,11 +917,11 @@ public final class Client {
      */
     public com.google.protobuf.ByteString
         getIdentityBytes() {
-      java.lang.Object ref = identity_;
-      if (ref instanceof java.lang.String) {
+      Object ref = identity_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         identity_ = b;
         return b;
       } else {
@@ -930,7 +930,7 @@ public final class Client {
     }
 
     public static final int KEY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object key_;
+    private volatile Object key_;
     /**
      * <pre>
      * Name of the object to put the value to
@@ -938,14 +938,14 @@ public final class Client {
      *
      * <code>string key = 2;</code>
      */
-    public java.lang.String getKey() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getKey() {
+      Object ref = key_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         key_ = s;
         return s;
       }
@@ -959,11 +959,11 @@ public final class Client {
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
+      Object ref = key_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         key_ = b;
         return b;
       } else {
@@ -1028,15 +1028,15 @@ public final class Client {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof pb.Client.PutRequest)) {
+      if (!(obj instanceof PutRequest)) {
         return super.equals(obj);
       }
-      pb.Client.PutRequest other = (pb.Client.PutRequest) obj;
+      PutRequest other = (PutRequest) obj;
 
       boolean result = true;
       result = result && getIdentity()
@@ -1049,7 +1049,7 @@ public final class Client {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -1067,69 +1067,69 @@ public final class Client {
       return hash;
     }
 
-    public static pb.Client.PutRequest parseFrom(
+    public static PutRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pb.Client.PutRequest parseFrom(
+    public static PutRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pb.Client.PutRequest parseFrom(
+    public static PutRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pb.Client.PutRequest parseFrom(
+    public static PutRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pb.Client.PutRequest parseFrom(byte[] data)
+    public static PutRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pb.Client.PutRequest parseFrom(
+    public static PutRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pb.Client.PutRequest parseFrom(java.io.InputStream input)
+    public static PutRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static pb.Client.PutRequest parseFrom(
+    public static PutRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static pb.Client.PutRequest parseDelimitedFrom(java.io.InputStream input)
+    public static PutRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static pb.Client.PutRequest parseDelimitedFrom(
+    public static PutRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static pb.Client.PutRequest parseFrom(
+    public static PutRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static pb.Client.PutRequest parseFrom(
+    public static PutRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1141,7 +1141,7 @@ public final class Client {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(pb.Client.PutRequest prototype) {
+    public static Builder newBuilder(PutRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1149,7 +1149,7 @@ public final class Client {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -1161,17 +1161,17 @@ public final class Client {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:pb.PutRequest)
-        pb.Client.PutRequestOrBuilder {
+        PutRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return pb.Client.internal_static_pb_PutRequest_descriptor;
+        return Client.internal_static_pb_PutRequest_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return pb.Client.internal_static_pb_PutRequest_fieldAccessorTable
+        return Client.internal_static_pb_PutRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                pb.Client.PutRequest.class, pb.Client.PutRequest.Builder.class);
+                PutRequest.class, Builder.class);
       }
 
       // Construct using pb.Client.PutRequest.newBuilder()
@@ -1202,23 +1202,23 @@ public final class Client {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return pb.Client.internal_static_pb_PutRequest_descriptor;
+        return Client.internal_static_pb_PutRequest_descriptor;
       }
 
-      public pb.Client.PutRequest getDefaultInstanceForType() {
-        return pb.Client.PutRequest.getDefaultInstance();
+      public PutRequest getDefaultInstanceForType() {
+        return PutRequest.getDefaultInstance();
       }
 
-      public pb.Client.PutRequest build() {
-        pb.Client.PutRequest result = buildPartial();
+      public PutRequest build() {
+        PutRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public pb.Client.PutRequest buildPartial() {
-        pb.Client.PutRequest result = new pb.Client.PutRequest(this);
+      public PutRequest buildPartial() {
+        PutRequest result = new PutRequest(this);
         result.identity_ = identity_;
         result.key_ = key_;
         result.value_ = value_;
@@ -1231,7 +1231,7 @@ public final class Client {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1244,25 +1244,25 @@ public final class Client {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof pb.Client.PutRequest) {
-          return mergeFrom((pb.Client.PutRequest)other);
+        if (other instanceof PutRequest) {
+          return mergeFrom((PutRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(pb.Client.PutRequest other) {
-        if (other == pb.Client.PutRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(PutRequest other) {
+        if (other == PutRequest.getDefaultInstance()) return this;
         if (!other.getIdentity().isEmpty()) {
           identity_ = other.identity_;
           onChanged();
@@ -1287,11 +1287,11 @@ public final class Client {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        pb.Client.PutRequest parsedMessage = null;
+        PutRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (pb.Client.PutRequest) e.getUnfinishedMessage();
+          parsedMessage = (PutRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1301,7 +1301,7 @@ public final class Client {
         return this;
       }
 
-      private java.lang.Object identity_ = "";
+      private Object identity_ = "";
       /**
        * <pre>
        * Unique identity for the client, used in benchmarks
@@ -1309,16 +1309,16 @@ public final class Client {
        *
        * <code>string identity = 1;</code>
        */
-      public java.lang.String getIdentity() {
-        java.lang.Object ref = identity_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getIdentity() {
+        Object ref = identity_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           identity_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -1330,11 +1330,11 @@ public final class Client {
        */
       public com.google.protobuf.ByteString
           getIdentityBytes() {
-        java.lang.Object ref = identity_;
+        Object ref = identity_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           identity_ = b;
           return b;
         } else {
@@ -1349,7 +1349,7 @@ public final class Client {
        * <code>string identity = 1;</code>
        */
       public Builder setIdentity(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1390,7 +1390,7 @@ public final class Client {
         return this;
       }
 
-      private java.lang.Object key_ = "";
+      private Object key_ = "";
       /**
        * <pre>
        * Name of the object to put the value to
@@ -1398,16 +1398,16 @@ public final class Client {
        *
        * <code>string key = 2;</code>
        */
-      public java.lang.String getKey() {
-        java.lang.Object ref = key_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getKey() {
+        Object ref = key_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           key_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -1419,11 +1419,11 @@ public final class Client {
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
-        java.lang.Object ref = key_;
+        Object ref = key_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           key_ = b;
           return b;
         } else {
@@ -1438,7 +1438,7 @@ public final class Client {
        * <code>string key = 2;</code>
        */
       public Builder setKey(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1534,12 +1534,12 @@ public final class Client {
     }
 
     // @@protoc_insertion_point(class_scope:pb.PutRequest)
-    private static final pb.Client.PutRequest DEFAULT_INSTANCE;
+    private static final PutRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new pb.Client.PutRequest();
+      DEFAULT_INSTANCE = new PutRequest();
     }
 
-    public static pb.Client.PutRequest getDefaultInstance() {
+    public static PutRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1557,12 +1557,12 @@ public final class Client {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<PutRequest> getParserForType() {
       return PARSER;
     }
 
-    public pb.Client.PutRequest getDefaultInstanceForType() {
+    public PutRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1579,7 +1579,7 @@ public final class Client {
      *
      * <code>string identity = 1;</code>
      */
-    java.lang.String getIdentity();
+    String getIdentity();
     /**
      * <pre>
      * Unique identity for the client, used in benchmarks
@@ -1597,7 +1597,7 @@ public final class Client {
      *
      * <code>string key = 2;</code>
      */
-    java.lang.String getKey();
+    String getKey();
     /**
      * <pre>
      * Name of the object to delete
@@ -1635,7 +1635,7 @@ public final class Client {
       force_ = false;
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1646,7 +1646,7 @@ public final class Client {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -1667,13 +1667,13 @@ public final class Client {
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               identity_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               key_ = s;
               break;
@@ -1697,18 +1697,18 @@ public final class Client {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return pb.Client.internal_static_pb_DelRequest_descriptor;
+      return Client.internal_static_pb_DelRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return pb.Client.internal_static_pb_DelRequest_fieldAccessorTable
+      return Client.internal_static_pb_DelRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              pb.Client.DelRequest.class, pb.Client.DelRequest.Builder.class);
+              DelRequest.class, Builder.class);
     }
 
     public static final int IDENTITY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object identity_;
+    private volatile Object identity_;
     /**
      * <pre>
      * Unique identity for the client, used in benchmarks
@@ -1716,14 +1716,14 @@ public final class Client {
      *
      * <code>string identity = 1;</code>
      */
-    public java.lang.String getIdentity() {
-      java.lang.Object ref = identity_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getIdentity() {
+      Object ref = identity_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         identity_ = s;
         return s;
       }
@@ -1737,11 +1737,11 @@ public final class Client {
      */
     public com.google.protobuf.ByteString
         getIdentityBytes() {
-      java.lang.Object ref = identity_;
-      if (ref instanceof java.lang.String) {
+      Object ref = identity_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         identity_ = b;
         return b;
       } else {
@@ -1750,7 +1750,7 @@ public final class Client {
     }
 
     public static final int KEY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object key_;
+    private volatile Object key_;
     /**
      * <pre>
      * Name of the object to delete
@@ -1758,14 +1758,14 @@ public final class Client {
      *
      * <code>string key = 2;</code>
      */
-    public java.lang.String getKey() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getKey() {
+      Object ref = key_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         key_ = s;
         return s;
       }
@@ -1779,11 +1779,11 @@ public final class Client {
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
+      Object ref = key_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         key_ = b;
         return b;
       } else {
@@ -1848,15 +1848,15 @@ public final class Client {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof pb.Client.DelRequest)) {
+      if (!(obj instanceof DelRequest)) {
         return super.equals(obj);
       }
-      pb.Client.DelRequest other = (pb.Client.DelRequest) obj;
+      DelRequest other = (DelRequest) obj;
 
       boolean result = true;
       result = result && getIdentity()
@@ -1869,7 +1869,7 @@ public final class Client {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -1888,69 +1888,69 @@ public final class Client {
       return hash;
     }
 
-    public static pb.Client.DelRequest parseFrom(
+    public static DelRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pb.Client.DelRequest parseFrom(
+    public static DelRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pb.Client.DelRequest parseFrom(
+    public static DelRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pb.Client.DelRequest parseFrom(
+    public static DelRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pb.Client.DelRequest parseFrom(byte[] data)
+    public static DelRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pb.Client.DelRequest parseFrom(
+    public static DelRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pb.Client.DelRequest parseFrom(java.io.InputStream input)
+    public static DelRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static pb.Client.DelRequest parseFrom(
+    public static DelRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static pb.Client.DelRequest parseDelimitedFrom(java.io.InputStream input)
+    public static DelRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static pb.Client.DelRequest parseDelimitedFrom(
+    public static DelRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static pb.Client.DelRequest parseFrom(
+    public static DelRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static pb.Client.DelRequest parseFrom(
+    public static DelRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1962,7 +1962,7 @@ public final class Client {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(pb.Client.DelRequest prototype) {
+    public static Builder newBuilder(DelRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1970,7 +1970,7 @@ public final class Client {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -1982,17 +1982,17 @@ public final class Client {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:pb.DelRequest)
-        pb.Client.DelRequestOrBuilder {
+        DelRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return pb.Client.internal_static_pb_DelRequest_descriptor;
+        return Client.internal_static_pb_DelRequest_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return pb.Client.internal_static_pb_DelRequest_fieldAccessorTable
+        return Client.internal_static_pb_DelRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                pb.Client.DelRequest.class, pb.Client.DelRequest.Builder.class);
+                DelRequest.class, Builder.class);
       }
 
       // Construct using pb.Client.DelRequest.newBuilder()
@@ -2023,23 +2023,23 @@ public final class Client {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return pb.Client.internal_static_pb_DelRequest_descriptor;
+        return Client.internal_static_pb_DelRequest_descriptor;
       }
 
-      public pb.Client.DelRequest getDefaultInstanceForType() {
-        return pb.Client.DelRequest.getDefaultInstance();
+      public DelRequest getDefaultInstanceForType() {
+        return DelRequest.getDefaultInstance();
       }
 
-      public pb.Client.DelRequest build() {
-        pb.Client.DelRequest result = buildPartial();
+      public DelRequest build() {
+        DelRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public pb.Client.DelRequest buildPartial() {
-        pb.Client.DelRequest result = new pb.Client.DelRequest(this);
+      public DelRequest buildPartial() {
+        DelRequest result = new DelRequest(this);
         result.identity_ = identity_;
         result.key_ = key_;
         result.force_ = force_;
@@ -2052,7 +2052,7 @@ public final class Client {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -2065,25 +2065,25 @@ public final class Client {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof pb.Client.DelRequest) {
-          return mergeFrom((pb.Client.DelRequest)other);
+        if (other instanceof DelRequest) {
+          return mergeFrom((DelRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(pb.Client.DelRequest other) {
-        if (other == pb.Client.DelRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(DelRequest other) {
+        if (other == DelRequest.getDefaultInstance()) return this;
         if (!other.getIdentity().isEmpty()) {
           identity_ = other.identity_;
           onChanged();
@@ -2108,11 +2108,11 @@ public final class Client {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        pb.Client.DelRequest parsedMessage = null;
+        DelRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (pb.Client.DelRequest) e.getUnfinishedMessage();
+          parsedMessage = (DelRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2122,7 +2122,7 @@ public final class Client {
         return this;
       }
 
-      private java.lang.Object identity_ = "";
+      private Object identity_ = "";
       /**
        * <pre>
        * Unique identity for the client, used in benchmarks
@@ -2130,16 +2130,16 @@ public final class Client {
        *
        * <code>string identity = 1;</code>
        */
-      public java.lang.String getIdentity() {
-        java.lang.Object ref = identity_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getIdentity() {
+        Object ref = identity_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           identity_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -2151,11 +2151,11 @@ public final class Client {
        */
       public com.google.protobuf.ByteString
           getIdentityBytes() {
-        java.lang.Object ref = identity_;
+        Object ref = identity_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           identity_ = b;
           return b;
         } else {
@@ -2170,7 +2170,7 @@ public final class Client {
        * <code>string identity = 1;</code>
        */
       public Builder setIdentity(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2211,7 +2211,7 @@ public final class Client {
         return this;
       }
 
-      private java.lang.Object key_ = "";
+      private Object key_ = "";
       /**
        * <pre>
        * Name of the object to delete
@@ -2219,16 +2219,16 @@ public final class Client {
        *
        * <code>string key = 2;</code>
        */
-      public java.lang.String getKey() {
-        java.lang.Object ref = key_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getKey() {
+        Object ref = key_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           key_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -2240,11 +2240,11 @@ public final class Client {
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
-        java.lang.Object ref = key_;
+        Object ref = key_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           key_ = b;
           return b;
         } else {
@@ -2259,7 +2259,7 @@ public final class Client {
        * <code>string key = 2;</code>
        */
       public Builder setKey(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2352,12 +2352,12 @@ public final class Client {
     }
 
     // @@protoc_insertion_point(class_scope:pb.DelRequest)
-    private static final pb.Client.DelRequest DEFAULT_INSTANCE;
+    private static final DelRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new pb.Client.DelRequest();
+      DEFAULT_INSTANCE = new DelRequest();
     }
 
-    public static pb.Client.DelRequest getDefaultInstance() {
+    public static DelRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2375,12 +2375,12 @@ public final class Client {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<DelRequest> getParserForType() {
       return PARSER;
     }
 
-    public pb.Client.DelRequest getDefaultInstanceForType() {
+    public DelRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2406,7 +2406,7 @@ public final class Client {
      *
      * <code>string redirect = 2;</code>
      */
-    java.lang.String getRedirect();
+    String getRedirect();
     /**
      * <pre>
      * The name of the leader to redirect the request to
@@ -2424,7 +2424,7 @@ public final class Client {
      *
      * <code>string error = 3;</code>
      */
-    java.lang.String getError();
+    String getError();
     /**
      * <pre>
      * Any errors if success is false
@@ -2450,7 +2450,7 @@ public final class Client {
      *
      * <code>.pb.KVPair pair = 7;</code>
      */
-    pb.Client.KVPair getPair();
+    KVPair getPair();
     /**
      * <pre>
      * The key/value pair and version from the operation
@@ -2458,7 +2458,7 @@ public final class Client {
      *
      * <code>.pb.KVPair pair = 7;</code>
      */
-    pb.Client.KVPairOrBuilder getPairOrBuilder();
+    KVPairOrBuilder getPairOrBuilder();
   }
   /**
    * Protobuf type {@code pb.ClientReply}
@@ -2478,7 +2478,7 @@ public final class Client {
       error_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -2489,7 +2489,7 @@ public final class Client {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -2515,23 +2515,23 @@ public final class Client {
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               redirect_ = s;
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               error_ = s;
               break;
             }
             case 58: {
-              pb.Client.KVPair.Builder subBuilder = null;
+              KVPair.Builder subBuilder = null;
               if (pair_ != null) {
                 subBuilder = pair_.toBuilder();
               }
-              pair_ = input.readMessage(pb.Client.KVPair.parser(), extensionRegistry);
+              pair_ = input.readMessage(KVPair.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(pair_);
                 pair_ = subBuilder.buildPartial();
@@ -2553,14 +2553,14 @@ public final class Client {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return pb.Client.internal_static_pb_ClientReply_descriptor;
+      return Client.internal_static_pb_ClientReply_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return pb.Client.internal_static_pb_ClientReply_fieldAccessorTable
+      return Client.internal_static_pb_ClientReply_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              pb.Client.ClientReply.class, pb.Client.ClientReply.Builder.class);
+              ClientReply.class, Builder.class);
     }
 
     public static final int SUCCESS_FIELD_NUMBER = 1;
@@ -2577,7 +2577,7 @@ public final class Client {
     }
 
     public static final int REDIRECT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object redirect_;
+    private volatile Object redirect_;
     /**
      * <pre>
      * The name of the leader to redirect the request to
@@ -2585,14 +2585,14 @@ public final class Client {
      *
      * <code>string redirect = 2;</code>
      */
-    public java.lang.String getRedirect() {
-      java.lang.Object ref = redirect_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getRedirect() {
+      Object ref = redirect_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         redirect_ = s;
         return s;
       }
@@ -2606,11 +2606,11 @@ public final class Client {
      */
     public com.google.protobuf.ByteString
         getRedirectBytes() {
-      java.lang.Object ref = redirect_;
-      if (ref instanceof java.lang.String) {
+      Object ref = redirect_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         redirect_ = b;
         return b;
       } else {
@@ -2619,7 +2619,7 @@ public final class Client {
     }
 
     public static final int ERROR_FIELD_NUMBER = 3;
-    private volatile java.lang.Object error_;
+    private volatile Object error_;
     /**
      * <pre>
      * Any errors if success is false
@@ -2627,14 +2627,14 @@ public final class Client {
      *
      * <code>string error = 3;</code>
      */
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getError() {
+      Object ref = error_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         error_ = s;
         return s;
       }
@@ -2648,11 +2648,11 @@ public final class Client {
      */
     public com.google.protobuf.ByteString
         getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
+      Object ref = error_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         error_ = b;
         return b;
       } else {
@@ -2661,7 +2661,7 @@ public final class Client {
     }
 
     public static final int PAIR_FIELD_NUMBER = 7;
-    private pb.Client.KVPair pair_;
+    private KVPair pair_;
     /**
      * <pre>
      * The key/value pair and version from the operation
@@ -2679,8 +2679,8 @@ public final class Client {
      *
      * <code>.pb.KVPair pair = 7;</code>
      */
-    public pb.Client.KVPair getPair() {
-      return pair_ == null ? pb.Client.KVPair.getDefaultInstance() : pair_;
+    public KVPair getPair() {
+      return pair_ == null ? KVPair.getDefaultInstance() : pair_;
     }
     /**
      * <pre>
@@ -2689,7 +2689,7 @@ public final class Client {
      *
      * <code>.pb.KVPair pair = 7;</code>
      */
-    public pb.Client.KVPairOrBuilder getPairOrBuilder() {
+    public KVPairOrBuilder getPairOrBuilder() {
       return getPair();
     }
 
@@ -2744,15 +2744,15 @@ public final class Client {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof pb.Client.ClientReply)) {
+      if (!(obj instanceof ClientReply)) {
         return super.equals(obj);
       }
-      pb.Client.ClientReply other = (pb.Client.ClientReply) obj;
+      ClientReply other = (ClientReply) obj;
 
       boolean result = true;
       result = result && (getSuccess()
@@ -2770,7 +2770,7 @@ public final class Client {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -2793,69 +2793,69 @@ public final class Client {
       return hash;
     }
 
-    public static pb.Client.ClientReply parseFrom(
+    public static ClientReply parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pb.Client.ClientReply parseFrom(
+    public static ClientReply parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pb.Client.ClientReply parseFrom(
+    public static ClientReply parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pb.Client.ClientReply parseFrom(
+    public static ClientReply parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pb.Client.ClientReply parseFrom(byte[] data)
+    public static ClientReply parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pb.Client.ClientReply parseFrom(
+    public static ClientReply parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pb.Client.ClientReply parseFrom(java.io.InputStream input)
+    public static ClientReply parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static pb.Client.ClientReply parseFrom(
+    public static ClientReply parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static pb.Client.ClientReply parseDelimitedFrom(java.io.InputStream input)
+    public static ClientReply parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static pb.Client.ClientReply parseDelimitedFrom(
+    public static ClientReply parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static pb.Client.ClientReply parseFrom(
+    public static ClientReply parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static pb.Client.ClientReply parseFrom(
+    public static ClientReply parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2867,7 +2867,7 @@ public final class Client {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(pb.Client.ClientReply prototype) {
+    public static Builder newBuilder(ClientReply prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -2875,7 +2875,7 @@ public final class Client {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -2887,17 +2887,17 @@ public final class Client {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:pb.ClientReply)
-        pb.Client.ClientReplyOrBuilder {
+        ClientReplyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return pb.Client.internal_static_pb_ClientReply_descriptor;
+        return Client.internal_static_pb_ClientReply_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return pb.Client.internal_static_pb_ClientReply_fieldAccessorTable
+        return Client.internal_static_pb_ClientReply_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                pb.Client.ClientReply.class, pb.Client.ClientReply.Builder.class);
+                ClientReply.class, Builder.class);
       }
 
       // Construct using pb.Client.ClientReply.newBuilder()
@@ -2934,23 +2934,23 @@ public final class Client {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return pb.Client.internal_static_pb_ClientReply_descriptor;
+        return Client.internal_static_pb_ClientReply_descriptor;
       }
 
-      public pb.Client.ClientReply getDefaultInstanceForType() {
-        return pb.Client.ClientReply.getDefaultInstance();
+      public ClientReply getDefaultInstanceForType() {
+        return ClientReply.getDefaultInstance();
       }
 
-      public pb.Client.ClientReply build() {
-        pb.Client.ClientReply result = buildPartial();
+      public ClientReply build() {
+        ClientReply result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public pb.Client.ClientReply buildPartial() {
-        pb.Client.ClientReply result = new pb.Client.ClientReply(this);
+      public ClientReply buildPartial() {
+        ClientReply result = new ClientReply(this);
         result.success_ = success_;
         result.redirect_ = redirect_;
         result.error_ = error_;
@@ -2968,7 +2968,7 @@ public final class Client {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -2981,25 +2981,25 @@ public final class Client {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof pb.Client.ClientReply) {
-          return mergeFrom((pb.Client.ClientReply)other);
+        if (other instanceof ClientReply) {
+          return mergeFrom((ClientReply)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(pb.Client.ClientReply other) {
-        if (other == pb.Client.ClientReply.getDefaultInstance()) return this;
+      public Builder mergeFrom(ClientReply other) {
+        if (other == ClientReply.getDefaultInstance()) return this;
         if (other.getSuccess() != false) {
           setSuccess(other.getSuccess());
         }
@@ -3027,11 +3027,11 @@ public final class Client {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        pb.Client.ClientReply parsedMessage = null;
+        ClientReply parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (pb.Client.ClientReply) e.getUnfinishedMessage();
+          parsedMessage = (ClientReply) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3079,7 +3079,7 @@ public final class Client {
         return this;
       }
 
-      private java.lang.Object redirect_ = "";
+      private Object redirect_ = "";
       /**
        * <pre>
        * The name of the leader to redirect the request to
@@ -3087,16 +3087,16 @@ public final class Client {
        *
        * <code>string redirect = 2;</code>
        */
-      public java.lang.String getRedirect() {
-        java.lang.Object ref = redirect_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getRedirect() {
+        Object ref = redirect_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           redirect_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -3108,11 +3108,11 @@ public final class Client {
        */
       public com.google.protobuf.ByteString
           getRedirectBytes() {
-        java.lang.Object ref = redirect_;
+        Object ref = redirect_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           redirect_ = b;
           return b;
         } else {
@@ -3127,7 +3127,7 @@ public final class Client {
        * <code>string redirect = 2;</code>
        */
       public Builder setRedirect(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3168,7 +3168,7 @@ public final class Client {
         return this;
       }
 
-      private java.lang.Object error_ = "";
+      private Object error_ = "";
       /**
        * <pre>
        * Any errors if success is false
@@ -3176,16 +3176,16 @@ public final class Client {
        *
        * <code>string error = 3;</code>
        */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getError() {
+        Object ref = error_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           error_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -3197,11 +3197,11 @@ public final class Client {
        */
       public com.google.protobuf.ByteString
           getErrorBytes() {
-        java.lang.Object ref = error_;
+        Object ref = error_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           error_ = b;
           return b;
         } else {
@@ -3216,7 +3216,7 @@ public final class Client {
        * <code>string error = 3;</code>
        */
       public Builder setError(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3257,9 +3257,9 @@ public final class Client {
         return this;
       }
 
-      private pb.Client.KVPair pair_ = null;
+      private KVPair pair_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          pb.Client.KVPair, pb.Client.KVPair.Builder, pb.Client.KVPairOrBuilder> pairBuilder_;
+          KVPair, KVPair.Builder, KVPairOrBuilder> pairBuilder_;
       /**
        * <pre>
        * The key/value pair and version from the operation
@@ -3277,9 +3277,9 @@ public final class Client {
        *
        * <code>.pb.KVPair pair = 7;</code>
        */
-      public pb.Client.KVPair getPair() {
+      public KVPair getPair() {
         if (pairBuilder_ == null) {
-          return pair_ == null ? pb.Client.KVPair.getDefaultInstance() : pair_;
+          return pair_ == null ? KVPair.getDefaultInstance() : pair_;
         } else {
           return pairBuilder_.getMessage();
         }
@@ -3291,7 +3291,7 @@ public final class Client {
        *
        * <code>.pb.KVPair pair = 7;</code>
        */
-      public Builder setPair(pb.Client.KVPair value) {
+      public Builder setPair(KVPair value) {
         if (pairBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3312,7 +3312,7 @@ public final class Client {
        * <code>.pb.KVPair pair = 7;</code>
        */
       public Builder setPair(
-          pb.Client.KVPair.Builder builderForValue) {
+          KVPair.Builder builderForValue) {
         if (pairBuilder_ == null) {
           pair_ = builderForValue.build();
           onChanged();
@@ -3329,11 +3329,11 @@ public final class Client {
        *
        * <code>.pb.KVPair pair = 7;</code>
        */
-      public Builder mergePair(pb.Client.KVPair value) {
+      public Builder mergePair(KVPair value) {
         if (pairBuilder_ == null) {
           if (pair_ != null) {
             pair_ =
-              pb.Client.KVPair.newBuilder(pair_).mergeFrom(value).buildPartial();
+              KVPair.newBuilder(pair_).mergeFrom(value).buildPartial();
           } else {
             pair_ = value;
           }
@@ -3369,7 +3369,7 @@ public final class Client {
        *
        * <code>.pb.KVPair pair = 7;</code>
        */
-      public pb.Client.KVPair.Builder getPairBuilder() {
+      public KVPair.Builder getPairBuilder() {
         
         onChanged();
         return getPairFieldBuilder().getBuilder();
@@ -3381,12 +3381,12 @@ public final class Client {
        *
        * <code>.pb.KVPair pair = 7;</code>
        */
-      public pb.Client.KVPairOrBuilder getPairOrBuilder() {
+      public KVPairOrBuilder getPairOrBuilder() {
         if (pairBuilder_ != null) {
           return pairBuilder_.getMessageOrBuilder();
         } else {
           return pair_ == null ?
-              pb.Client.KVPair.getDefaultInstance() : pair_;
+              KVPair.getDefaultInstance() : pair_;
         }
       }
       /**
@@ -3397,11 +3397,11 @@ public final class Client {
        * <code>.pb.KVPair pair = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          pb.Client.KVPair, pb.Client.KVPair.Builder, pb.Client.KVPairOrBuilder> 
+          KVPair, KVPair.Builder, KVPairOrBuilder>
           getPairFieldBuilder() {
         if (pairBuilder_ == null) {
           pairBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              pb.Client.KVPair, pb.Client.KVPair.Builder, pb.Client.KVPairOrBuilder>(
+              KVPair, KVPair.Builder, KVPairOrBuilder>(
                   getPair(),
                   getParentForChildren(),
                   isClean());
@@ -3424,12 +3424,12 @@ public final class Client {
     }
 
     // @@protoc_insertion_point(class_scope:pb.ClientReply)
-    private static final pb.Client.ClientReply DEFAULT_INSTANCE;
+    private static final ClientReply DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new pb.Client.ClientReply();
+      DEFAULT_INSTANCE = new ClientReply();
     }
 
-    public static pb.Client.ClientReply getDefaultInstance() {
+    public static ClientReply getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3447,12 +3447,12 @@ public final class Client {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<ClientReply> getParserForType() {
       return PARSER;
     }
 
-    public pb.Client.ClientReply getDefaultInstanceForType() {
+    public ClientReply getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3469,7 +3469,7 @@ public final class Client {
      *
      * <code>string key = 1;</code>
      */
-    java.lang.String getKey();
+    String getKey();
     /**
      * <pre>
      * The name of the object
@@ -3510,7 +3510,7 @@ public final class Client {
       value_ = com.google.protobuf.ByteString.EMPTY;
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -3521,7 +3521,7 @@ public final class Client {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -3542,7 +3542,7 @@ public final class Client {
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               key_ = s;
               break;
@@ -3566,18 +3566,18 @@ public final class Client {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return pb.Client.internal_static_pb_KVPair_descriptor;
+      return Client.internal_static_pb_KVPair_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return pb.Client.internal_static_pb_KVPair_fieldAccessorTable
+      return Client.internal_static_pb_KVPair_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              pb.Client.KVPair.class, pb.Client.KVPair.Builder.class);
+              KVPair.class, Builder.class);
     }
 
     public static final int KEY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object key_;
+    private volatile Object key_;
     /**
      * <pre>
      * The name of the object
@@ -3585,14 +3585,14 @@ public final class Client {
      *
      * <code>string key = 1;</code>
      */
-    public java.lang.String getKey() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getKey() {
+      Object ref = key_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         key_ = s;
         return s;
       }
@@ -3606,11 +3606,11 @@ public final class Client {
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
+      Object ref = key_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         key_ = b;
         return b;
       } else {
@@ -3669,15 +3669,15 @@ public final class Client {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof pb.Client.KVPair)) {
+      if (!(obj instanceof KVPair)) {
         return super.equals(obj);
       }
-      pb.Client.KVPair other = (pb.Client.KVPair) obj;
+      KVPair other = (KVPair) obj;
 
       boolean result = true;
       result = result && getKey()
@@ -3688,7 +3688,7 @@ public final class Client {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -3704,69 +3704,69 @@ public final class Client {
       return hash;
     }
 
-    public static pb.Client.KVPair parseFrom(
+    public static KVPair parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pb.Client.KVPair parseFrom(
+    public static KVPair parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pb.Client.KVPair parseFrom(
+    public static KVPair parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pb.Client.KVPair parseFrom(
+    public static KVPair parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pb.Client.KVPair parseFrom(byte[] data)
+    public static KVPair parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pb.Client.KVPair parseFrom(
+    public static KVPair parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pb.Client.KVPair parseFrom(java.io.InputStream input)
+    public static KVPair parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static pb.Client.KVPair parseFrom(
+    public static KVPair parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static pb.Client.KVPair parseDelimitedFrom(java.io.InputStream input)
+    public static KVPair parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static pb.Client.KVPair parseDelimitedFrom(
+    public static KVPair parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static pb.Client.KVPair parseFrom(
+    public static KVPair parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static pb.Client.KVPair parseFrom(
+    public static KVPair parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3778,7 +3778,7 @@ public final class Client {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(pb.Client.KVPair prototype) {
+    public static Builder newBuilder(KVPair prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -3786,7 +3786,7 @@ public final class Client {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -3802,17 +3802,17 @@ public final class Client {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:pb.KVPair)
-        pb.Client.KVPairOrBuilder {
+        KVPairOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return pb.Client.internal_static_pb_KVPair_descriptor;
+        return Client.internal_static_pb_KVPair_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return pb.Client.internal_static_pb_KVPair_fieldAccessorTable
+        return Client.internal_static_pb_KVPair_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                pb.Client.KVPair.class, pb.Client.KVPair.Builder.class);
+                KVPair.class, Builder.class);
       }
 
       // Construct using pb.Client.KVPair.newBuilder()
@@ -3841,23 +3841,23 @@ public final class Client {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return pb.Client.internal_static_pb_KVPair_descriptor;
+        return Client.internal_static_pb_KVPair_descriptor;
       }
 
-      public pb.Client.KVPair getDefaultInstanceForType() {
-        return pb.Client.KVPair.getDefaultInstance();
+      public KVPair getDefaultInstanceForType() {
+        return KVPair.getDefaultInstance();
       }
 
-      public pb.Client.KVPair build() {
-        pb.Client.KVPair result = buildPartial();
+      public KVPair build() {
+        KVPair result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public pb.Client.KVPair buildPartial() {
-        pb.Client.KVPair result = new pb.Client.KVPair(this);
+      public KVPair buildPartial() {
+        KVPair result = new KVPair(this);
         result.key_ = key_;
         result.value_ = value_;
         onBuilt();
@@ -3869,7 +3869,7 @@ public final class Client {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -3882,25 +3882,25 @@ public final class Client {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof pb.Client.KVPair) {
-          return mergeFrom((pb.Client.KVPair)other);
+        if (other instanceof KVPair) {
+          return mergeFrom((KVPair)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(pb.Client.KVPair other) {
-        if (other == pb.Client.KVPair.getDefaultInstance()) return this;
+      public Builder mergeFrom(KVPair other) {
+        if (other == KVPair.getDefaultInstance()) return this;
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
           onChanged();
@@ -3921,11 +3921,11 @@ public final class Client {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        pb.Client.KVPair parsedMessage = null;
+        KVPair parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (pb.Client.KVPair) e.getUnfinishedMessage();
+          parsedMessage = (KVPair) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3935,7 +3935,7 @@ public final class Client {
         return this;
       }
 
-      private java.lang.Object key_ = "";
+      private Object key_ = "";
       /**
        * <pre>
        * The name of the object
@@ -3943,16 +3943,16 @@ public final class Client {
        *
        * <code>string key = 1;</code>
        */
-      public java.lang.String getKey() {
-        java.lang.Object ref = key_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getKey() {
+        Object ref = key_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           key_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -3964,11 +3964,11 @@ public final class Client {
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
-        java.lang.Object ref = key_;
+        Object ref = key_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           key_ = b;
           return b;
         } else {
@@ -3983,7 +3983,7 @@ public final class Client {
        * <code>string key = 1;</code>
        */
       public Builder setKey(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4079,12 +4079,12 @@ public final class Client {
     }
 
     // @@protoc_insertion_point(class_scope:pb.KVPair)
-    private static final pb.Client.KVPair DEFAULT_INSTANCE;
+    private static final KVPair DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new pb.Client.KVPair();
+      DEFAULT_INSTANCE = new KVPair();
     }
 
-    public static pb.Client.KVPair getDefaultInstance() {
+    public static KVPair getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4102,12 +4102,12 @@ public final class Client {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<KVPair> getParserForType() {
       return PARSER;
     }
 
-    public pb.Client.KVPair getDefaultInstanceForType() {
+    public KVPair getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4146,7 +4146,7 @@ public final class Client {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\014client.proto\022\002pb\"+\n\nGetRequest\022\020\n\010iden" +
       "tity\030\001 \001(\t\022\013\n\003key\030\002 \001(\t\":\n\nPutRequest\022\020\n" +
       "\010identity\030\001 \001(\t\022\013\n\003key\030\002 \001(\t\022\r\n\005value\030\007 " +
@@ -4177,31 +4177,31 @@ public final class Client {
     internal_static_pb_GetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_GetRequest_descriptor,
-        new java.lang.String[] { "Identity", "Key", });
+        new String[] { "Identity", "Key", });
     internal_static_pb_PutRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_pb_PutRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_PutRequest_descriptor,
-        new java.lang.String[] { "Identity", "Key", "Value", });
+        new String[] { "Identity", "Key", "Value", });
     internal_static_pb_DelRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_pb_DelRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_DelRequest_descriptor,
-        new java.lang.String[] { "Identity", "Key", "Force", });
+        new String[] { "Identity", "Key", "Force", });
     internal_static_pb_ClientReply_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_pb_ClientReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_ClientReply_descriptor,
-        new java.lang.String[] { "Success", "Redirect", "Error", "Pair", });
+        new String[] { "Success", "Redirect", "Error", "Pair", });
     internal_static_pb_KVPair_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_pb_KVPair_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_KVPair_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new String[] { "Key", "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -30,30 +30,30 @@ public final class KVGrpc {
   public static final String SERVICE_NAME = "pb.KV";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<pb.Client.GetRequest,
-      pb.Client.ClientReply> getGetMethod;
+  private static volatile io.grpc.MethodDescriptor<Client.GetRequest,
+      Client.ClientReply> getGetMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Get",
-      requestType = pb.Client.GetRequest.class,
-      responseType = pb.Client.ClientReply.class,
+      requestType = Client.GetRequest.class,
+      responseType = Client.ClientReply.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<pb.Client.GetRequest,
-      pb.Client.ClientReply> getGetMethod() {
-    io.grpc.MethodDescriptor<pb.Client.GetRequest, pb.Client.ClientReply> getGetMethod;
+  public static io.grpc.MethodDescriptor<Client.GetRequest,
+      Client.ClientReply> getGetMethod() {
+    io.grpc.MethodDescriptor<Client.GetRequest, Client.ClientReply> getGetMethod;
     if ((getGetMethod = KVGrpc.getGetMethod) == null) {
       synchronized (KVGrpc.class) {
         if ((getGetMethod = KVGrpc.getGetMethod) == null) {
           KVGrpc.getGetMethod = getGetMethod = 
-              io.grpc.MethodDescriptor.<pb.Client.GetRequest, pb.Client.ClientReply>newBuilder()
+              io.grpc.MethodDescriptor.<Client.GetRequest, Client.ClientReply>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "pb.KV", "Get"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  pb.Client.GetRequest.getDefaultInstance()))
+                  Client.GetRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  pb.Client.ClientReply.getDefaultInstance()))
+                  Client.ClientReply.getDefaultInstance()))
                   .setSchemaDescriptor(new KVMethodDescriptorSupplier("Get"))
                   .build();
           }
@@ -62,30 +62,30 @@ public final class KVGrpc {
      return getGetMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<pb.Client.PutRequest,
-      pb.Client.ClientReply> getPutMethod;
+  private static volatile io.grpc.MethodDescriptor<Client.PutRequest,
+      Client.ClientReply> getPutMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Put",
-      requestType = pb.Client.PutRequest.class,
-      responseType = pb.Client.ClientReply.class,
+      requestType = Client.PutRequest.class,
+      responseType = Client.ClientReply.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<pb.Client.PutRequest,
-      pb.Client.ClientReply> getPutMethod() {
-    io.grpc.MethodDescriptor<pb.Client.PutRequest, pb.Client.ClientReply> getPutMethod;
+  public static io.grpc.MethodDescriptor<Client.PutRequest,
+      Client.ClientReply> getPutMethod() {
+    io.grpc.MethodDescriptor<Client.PutRequest, Client.ClientReply> getPutMethod;
     if ((getPutMethod = KVGrpc.getPutMethod) == null) {
       synchronized (KVGrpc.class) {
         if ((getPutMethod = KVGrpc.getPutMethod) == null) {
           KVGrpc.getPutMethod = getPutMethod = 
-              io.grpc.MethodDescriptor.<pb.Client.PutRequest, pb.Client.ClientReply>newBuilder()
+              io.grpc.MethodDescriptor.<Client.PutRequest, Client.ClientReply>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "pb.KV", "Put"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  pb.Client.PutRequest.getDefaultInstance()))
+                  Client.PutRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  pb.Client.ClientReply.getDefaultInstance()))
+                  Client.ClientReply.getDefaultInstance()))
                   .setSchemaDescriptor(new KVMethodDescriptorSupplier("Put"))
                   .build();
           }
@@ -94,30 +94,30 @@ public final class KVGrpc {
      return getPutMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<pb.Client.DelRequest,
-      pb.Client.ClientReply> getDelMethod;
+  private static volatile io.grpc.MethodDescriptor<Client.DelRequest,
+      Client.ClientReply> getDelMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Del",
-      requestType = pb.Client.DelRequest.class,
-      responseType = pb.Client.ClientReply.class,
+      requestType = Client.DelRequest.class,
+      responseType = Client.ClientReply.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<pb.Client.DelRequest,
-      pb.Client.ClientReply> getDelMethod() {
-    io.grpc.MethodDescriptor<pb.Client.DelRequest, pb.Client.ClientReply> getDelMethod;
+  public static io.grpc.MethodDescriptor<Client.DelRequest,
+      Client.ClientReply> getDelMethod() {
+    io.grpc.MethodDescriptor<Client.DelRequest, Client.ClientReply> getDelMethod;
     if ((getDelMethod = KVGrpc.getDelMethod) == null) {
       synchronized (KVGrpc.class) {
         if ((getDelMethod = KVGrpc.getDelMethod) == null) {
           KVGrpc.getDelMethod = getDelMethod = 
-              io.grpc.MethodDescriptor.<pb.Client.DelRequest, pb.Client.ClientReply>newBuilder()
+              io.grpc.MethodDescriptor.<Client.DelRequest, Client.ClientReply>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "pb.KV", "Del"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  pb.Client.DelRequest.getDefaultInstance()))
+                  Client.DelRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  pb.Client.ClientReply.getDefaultInstance()))
+                  Client.ClientReply.getDefaultInstance()))
                   .setSchemaDescriptor(new KVMethodDescriptorSupplier("Del"))
                   .build();
           }
@@ -158,47 +158,47 @@ public final class KVGrpc {
 
     /**
      */
-    public void get(pb.Client.GetRequest request,
-        io.grpc.stub.StreamObserver<pb.Client.ClientReply> responseObserver) {
+    public void get(Client.GetRequest request,
+        io.grpc.stub.StreamObserver<Client.ClientReply> responseObserver) {
       asyncUnimplementedUnaryCall(getGetMethod(), responseObserver);
     }
 
     /**
      */
-    public void put(pb.Client.PutRequest request,
-        io.grpc.stub.StreamObserver<pb.Client.ClientReply> responseObserver) {
+    public void put(Client.PutRequest request,
+        io.grpc.stub.StreamObserver<Client.ClientReply> responseObserver) {
       asyncUnimplementedUnaryCall(getPutMethod(), responseObserver);
     }
 
     /**
      */
-    public void del(pb.Client.DelRequest request,
-        io.grpc.stub.StreamObserver<pb.Client.ClientReply> responseObserver) {
+    public void del(Client.DelRequest request,
+        io.grpc.stub.StreamObserver<Client.ClientReply> responseObserver) {
       asyncUnimplementedUnaryCall(getDelMethod(), responseObserver);
     }
 
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+    @Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                pb.Client.GetRequest,
-                pb.Client.ClientReply>(
+                Client.GetRequest,
+                Client.ClientReply>(
                   this, METHODID_GET)))
           .addMethod(
             getPutMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                pb.Client.PutRequest,
-                pb.Client.ClientReply>(
+                Client.PutRequest,
+                Client.ClientReply>(
                   this, METHODID_PUT)))
           .addMethod(
             getDelMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                pb.Client.DelRequest,
-                pb.Client.ClientReply>(
+                Client.DelRequest,
+                Client.ClientReply>(
                   this, METHODID_DEL)))
           .build();
     }
@@ -219,7 +219,7 @@ public final class KVGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected KVStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new KVStub(channel, callOptions);
@@ -227,24 +227,24 @@ public final class KVGrpc {
 
     /**
      */
-    public void get(pb.Client.GetRequest request,
-        io.grpc.stub.StreamObserver<pb.Client.ClientReply> responseObserver) {
+    public void get(Client.GetRequest request,
+        io.grpc.stub.StreamObserver<Client.ClientReply> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void put(pb.Client.PutRequest request,
-        io.grpc.stub.StreamObserver<pb.Client.ClientReply> responseObserver) {
+    public void put(Client.PutRequest request,
+        io.grpc.stub.StreamObserver<Client.ClientReply> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getPutMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void del(pb.Client.DelRequest request,
-        io.grpc.stub.StreamObserver<pb.Client.ClientReply> responseObserver) {
+    public void del(Client.DelRequest request,
+        io.grpc.stub.StreamObserver<Client.ClientReply> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDelMethod(), getCallOptions()), request, responseObserver);
     }
@@ -265,7 +265,7 @@ public final class KVGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected KVBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new KVBlockingStub(channel, callOptions);
@@ -273,21 +273,21 @@ public final class KVGrpc {
 
     /**
      */
-    public pb.Client.ClientReply get(pb.Client.GetRequest request) {
+    public Client.ClientReply get(Client.GetRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public pb.Client.ClientReply put(pb.Client.PutRequest request) {
+    public Client.ClientReply put(Client.PutRequest request) {
       return blockingUnaryCall(
           getChannel(), getPutMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public pb.Client.ClientReply del(pb.Client.DelRequest request) {
+    public Client.ClientReply del(Client.DelRequest request) {
       return blockingUnaryCall(
           getChannel(), getDelMethod(), getCallOptions(), request);
     }
@@ -308,7 +308,7 @@ public final class KVGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected KVFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new KVFutureStub(channel, callOptions);
@@ -316,24 +316,24 @@ public final class KVGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<pb.Client.ClientReply> get(
-        pb.Client.GetRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<Client.ClientReply> get(
+        Client.GetRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getGetMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<pb.Client.ClientReply> put(
-        pb.Client.PutRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<Client.ClientReply> put(
+        Client.PutRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getPutMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<pb.Client.ClientReply> del(
-        pb.Client.DelRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<Client.ClientReply> del(
+        Client.DelRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDelMethod(), getCallOptions()), request);
     }
@@ -356,29 +356,29 @@ public final class KVGrpc {
       this.methodId = methodId;
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET:
-          serviceImpl.get((pb.Client.GetRequest) request,
-              (io.grpc.stub.StreamObserver<pb.Client.ClientReply>) responseObserver);
+          serviceImpl.get((Client.GetRequest) request,
+              (io.grpc.stub.StreamObserver<Client.ClientReply>) responseObserver);
           break;
         case METHODID_PUT:
-          serviceImpl.put((pb.Client.PutRequest) request,
-              (io.grpc.stub.StreamObserver<pb.Client.ClientReply>) responseObserver);
+          serviceImpl.put((Client.PutRequest) request,
+              (io.grpc.stub.StreamObserver<Client.ClientReply>) responseObserver);
           break;
         case METHODID_DEL:
-          serviceImpl.del((pb.Client.DelRequest) request,
-              (io.grpc.stub.StreamObserver<pb.Client.ClientReply>) responseObserver);
+          serviceImpl.del((Client.DelRequest) request,
+              (io.grpc.stub.StreamObserver<Client.ClientReply>) responseObserver);
           break;
         default:
           throw new AssertionError();
       }
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
@@ -392,12 +392,12 @@ public final class KVGrpc {
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     KVBaseDescriptorSupplier() {}
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return pb.Client.getDescriptor();
+      return Client.getDescriptor();
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
       return getFileDescriptor().findServiceByName("KV");
     }
@@ -417,7 +417,7 @@ public final class KVGrpc {
       this.methodName = methodName;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
       return getServiceDescriptor().findMethodByName(methodName);
     }

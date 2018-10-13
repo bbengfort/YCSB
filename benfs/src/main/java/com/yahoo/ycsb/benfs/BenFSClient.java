@@ -4,6 +4,7 @@ import com.google.protobuf.ByteString;
 import com.yahoo.ycsb.ByteArrayByteIterator;
 import com.yahoo.ycsb.ByteIterator;
 import com.yahoo.ycsb.DB;
+import com.yahoo.ycsb.DBException;
 import com.yahoo.ycsb.Status;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -20,19 +21,22 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class BenFSClient extends DB {
-  private static final Logger logger = Logger.getLogger(BenFSClient.class.getName());
+  public static final Logger logger = Logger.getLogger(BenFSClient.class.getName());
 
-  private final ManagedChannel channel;
-  private final KVGrpc.KVBlockingStub blockingStub;
+  public static ManagedChannel channel;
+  public KVGrpc.KVBlockingStub blockingStub;
+
+  public static final String HOST_DEFAULT = "localhost";
+  public static final String PORT_PROPERTY_DEFAULT = "50051";
+
+  public static final String HOST_PROPERTY = "host";
+  public static final String PORT_PROPERTY = "port";
+
+  public BenFSClient() {}
 
   /** Construct client for accessing HelloWorld server using the existing channel. */
   private BenFSClient(ManagedChannel channel) {
-    this.channel = channel;
     blockingStub = KVGrpc.newBlockingStub(channel);
-  }
-
-  public void shutdown() throws InterruptedException {
-    channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
   }
 
   /** Construct client connecting to HelloWorld server at {@code host:port}. */
@@ -43,6 +47,35 @@ public class BenFSClient extends DB {
             // needing certificates.
             .usePlaintext()
             .build());
+  }
+
+  /**
+   * Initialize any state for this DB. Called once per DB instance; there is one DB instance per
+   * client thread.
+   */
+  @Override
+  public void init() throws DBException {
+
+    String host = getProperties().getProperty(HOST_PROPERTY, HOST_DEFAULT);
+    int port = Integer.valueOf(getProperties().getProperty(PORT_PROPERTY, PORT_PROPERTY_DEFAULT));
+
+    channel =
+        ManagedChannelBuilder.forAddress(host, port)
+            // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
+            // needing certificates.
+            .usePlaintext()
+            .build();
+
+    blockingStub = KVGrpc.newBlockingStub(channel);
+  }
+
+  @Override
+  public void cleanup() throws DBException {
+    try {
+      channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
   }
 
   @Override
@@ -79,7 +112,8 @@ public class BenFSClient extends DB {
    * @param startkey The record key of the first record to read.
    * @param recordcount The number of records to read
    * @param fields The list of fields to read, or null for all of them
-   * @param result A Vector of HashMaps, where each HashMap is a set field/value pairs for one record
+   * @param result A Vector of HashMaps, where each HashMap is a set field/value pairs for one
+   *     record
    * @return
    */
   @Override
@@ -89,11 +123,12 @@ public class BenFSClient extends DB {
       int recordcount,
       Set<String> fields,
       Vector<HashMap<String, ByteIterator>> result) {
-    return null;
+    return Status.NOT_IMPLEMENTED;
   }
 
   /**
    * TODO Is this what we want to do with update?
+   *
    * @param table The name of the table
    * @param key The record key of the record to write.
    * @param values A HashMap of field/value pairs to update in the record
@@ -101,7 +136,7 @@ public class BenFSClient extends DB {
    */
   @Override
   public Status update(String table, String key, Map<String, ByteIterator> values) {
-    return insert(table,key,values);
+    return insert(table, key, values);
   }
 
   @Override
@@ -137,6 +172,8 @@ public class BenFSClient extends DB {
 
     try {
       response = blockingStub.del(request);
+      logger.log(Level.WARNING, "Delete Response: " + response.getPair());
+      logger.log(Level.WARNING, "Error: " + response.getError());
     } catch (StatusRuntimeException e) {
       logger.log(Level.WARNING, "RPC failed: {del}", e.getStatus());
       return Status.ERROR;
