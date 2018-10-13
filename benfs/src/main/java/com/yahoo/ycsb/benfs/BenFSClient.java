@@ -78,30 +78,55 @@ public class BenFSClient extends DB {
     }
   }
 
+  /**
+   * Read a record from the database. Each field/value pair from the result will be stored in a
+   * HashMap.
+   *
+   * <p>TODO
+   * If fields is null that means to read all fields for a certain key.How should this be
+   * implemented? Do we want for every key to make a distinct request? do we want to insert multiple
+   * fileds in one key value pair ?
+   *
+   * @param table The name of the table
+   * @param key The record key of the record to read.
+   * @param fields The list of fields to read, or null for all of them
+   * @param result A HashMap of field/value pairs for the result
+   * @return
+   */
   @Override
   public Status read(
       String table, String key, Set<String> fields, Map<String, ByteIterator> result) {
 
-    // TODO read certain fields.
-    System.out.println("Fields: " + fields);
-    System.out.println("key " + key);
+    if (fields == null) {
 
-    logger.info("Will try to read " + table + " ...");
-    Client.GetRequest request =
-        Client.GetRequest.newBuilder().setIdentity("test").setKey(key).build();
-    Client.ClientReply response;
-    try {
-      response = blockingStub.get(request);
+      // TODO
+      return Status.BAD_REQUEST;
+    } else {
 
-      // Add the returned value to the result
-      ByteIterator value = new ByteArrayByteIterator(response.getPair().getValue().toByteArray());
-      result.put(key, value);
+      // Do a get on each key-field combination as a distinct key.
+      for (String field : fields) {
+        String keyToRead = key + field;
 
-    } catch (StatusRuntimeException e) {
-      logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
-      return Status.ERROR;
+        // TODO What should the identity be?
+        Client.GetRequest request =
+            Client.GetRequest.newBuilder().setIdentity("test").setKey(keyToRead).build();
+        Client.ClientReply response;
+        try {
+          response = blockingStub.get(request);
+
+          // Add the returned value to the result
+          ByteIterator value =
+              new ByteArrayByteIterator(response.getPair().getValue().toByteArray());
+          result.put(key, value);
+
+        } catch (StatusRuntimeException e) {
+          logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
+          return Status.ERROR;
+        }
+        logger.info("Response: " + response.getPair());
+      }
     }
-    logger.info("Response: " + response.getPair());
+
     return Status.OK;
   }
 
@@ -127,7 +152,8 @@ public class BenFSClient extends DB {
   }
 
   /**
-   * TODO Is this what we want to do with update?
+   * TODO Update currently simply does an insert. It probably doesn't make sense to do two requests
+   * to check if the value already exists right?
    *
    * @param table The name of the table
    * @param key The record key of the record to write.
@@ -139,33 +165,67 @@ public class BenFSClient extends DB {
     return insert(table, key, values);
   }
 
+  /**
+   * Insert a record in the database. Any field/value pairs in the specified values HashMap will be
+   * written into the record with the specified record key.
+   *
+   * <p>NOTE: The values that are inserted are in the input values map in the form of (field, value)
+   * pairs. The way we insert them here is we create a unique key-field string and use that as the
+   * key for each value in the map.
+   *
+   * @param table The name of the table
+   * @param key The record key of the record to insert.
+   * @param values A HashMap of field/value pairs to insert in the record
+   * @return Status of the operation
+   */
   @Override
   public Status insert(String table, String key, Map<String, ByteIterator> values) {
-    logger.info("Will try to read " + table + " ...");
-    logger.info("key: "+key);
 
-    String value = values.toString();
-    System.out.println("value: "+value);
-    
+    // Add a unique key-value pair for each field in the values map.
+    for (Map.Entry<String, ByteIterator> fieldValuePair : values.entrySet()) {
+      ByteString value = ByteString.copyFrom(fieldValuePair.getValue().toArray());
+      String uniqueKey = key + fieldValuePair.getKey();
+      Status insertStatus = insertSingleKVPair(uniqueKey, value);
+
+      // Return if an error or sorts occurs.
+      if (insertStatus != Status.OK) {
+        return insertStatus;
+      }
+    }
+
+    return Status.OK;
+  }
+
+  /**
+   * Creates request to the server and handles response.
+   *
+   * @param key String representation of the unique key to be inserted.
+   * @param value Value bytes for the aforementioned key.
+   * @return
+   */
+  private Status insertSingleKVPair(String key, ByteString value) {
+
+    // Build Put Request
+    // TODO What should we put as the identity of the put request?
     Client.PutRequest request =
-        Client.PutRequest.newBuilder()
-            .setIdentity("test")
-            .setKey(key)
-            .setValue(ByteString.copyFrom(value.getBytes()))
-            .build();
+        Client.PutRequest.newBuilder().setIdentity("test").setKey(key).setValue(value).build();
     Client.ClientReply response;
 
     try {
+
+      // Get the response of the put request
       response = blockingStub.put(request);
 
-      // Add the returned value to the result
-      ByteIterator byteIter =
-          new ByteArrayByteIterator(response.getPair().getValue().toByteArray());
-      values.put(key, byteIter);
+      if (!response.getSuccess()) {
+        logger.log(Level.WARNING, "RPC failed: {put} response:", response.getSuccess());
+        return Status.ERROR;
+      }
     } catch (StatusRuntimeException e) {
       logger.log(Level.WARNING, "RPC failed: {put}", e.getStatus());
       return Status.ERROR;
     }
+
+    //    logger.log(Level.INFO, "Inserted: "+key+","+new String(value.toByteArray()));
     return Status.OK;
   }
 
