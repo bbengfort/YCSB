@@ -27,7 +27,7 @@ public class BenFSClient extends DB {
   public KVGrpc.KVBlockingStub blockingStub;
 
   public static final String HOST_DEFAULT = "localhost";
-  public static final String PORT_PROPERTY_DEFAULT = "50051";
+  public static final String PORT_PROPERTY_DEFAULT = "3264";
 
   public static final String HOST_PROPERTY = "host";
   public static final String PORT_PROPERTY = "port";
@@ -142,7 +142,11 @@ public class BenFSClient extends DB {
   @Override
   public Status insert(String table, String key, Map<String, ByteIterator> values) {
     logger.info("Will try to read " + table + " ...");
-    String value = values.get(key).toString();
+    logger.info("key: "+key);
+
+    String value = values.toString();
+    System.out.println("value: "+value);
+    
     Client.PutRequest request =
         Client.PutRequest.newBuilder()
             .setIdentity("test")
