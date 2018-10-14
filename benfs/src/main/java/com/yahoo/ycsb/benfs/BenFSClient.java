@@ -34,12 +34,10 @@ public class BenFSClient extends DB {
 
   public BenFSClient() {}
 
-  /** Construct client for accessing HelloWorld server using the existing channel. */
   private BenFSClient(ManagedChannel channel) {
     blockingStub = KVGrpc.newBlockingStub(channel);
   }
 
-  /** Construct client connecting to HelloWorld server at {@code host:port}. */
   private BenFSClient(String host, int port) {
     this(
         ManagedChannelBuilder.forAddress(host, port)
@@ -82,11 +80,6 @@ public class BenFSClient extends DB {
    * Read a record from the database. Each field/value pair from the result will be stored in a
    * HashMap.
    *
-   * <p>TODO
-   * If fields is null that means to read all fields for a certain key.How should this be
-   * implemented? Do we want for every key to make a distinct request? do we want to insert multiple
-   * fileds in one key value pair ?
-   *
    * @param table The name of the table
    * @param key The record key of the record to read.
    * @param fields The list of fields to read, or null for all of them
@@ -96,42 +89,35 @@ public class BenFSClient extends DB {
   @Override
   public Status read(
       String table, String key, Set<String> fields, Map<String, ByteIterator> result) {
-
     if (fields == null) {
 
-      // TODO
-      return Status.BAD_REQUEST;
+      // TODO What should the identity be?
+      Client.GetRequest request =
+          Client.GetRequest.newBuilder().setIdentity("test").setKey(key).build();
+      Client.ClientReply response;
+      try {
+        response = blockingStub.get(request);
+
+        // Add the returned value to the result
+        ByteIterator value = new ByteArrayByteIterator(response.getPair().getValue().toByteArray());
+        result.put(key, value);
+
+      } catch (StatusRuntimeException e) {
+        logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
+        return Status.ERROR;
+      }
     } else {
 
-      // Do a get on each key-field combination as a distinct key.
-      for (String field : fields) {
-        String keyToRead = key + field;
-
-        // TODO What should the identity be?
-        Client.GetRequest request =
-            Client.GetRequest.newBuilder().setIdentity("test").setKey(keyToRead).build();
-        Client.ClientReply response;
-        try {
-          response = blockingStub.get(request);
-
-          // Add the returned value to the result
-          ByteIterator value =
-              new ByteArrayByteIterator(response.getPair().getValue().toByteArray());
-          result.put(key, value);
-
-        } catch (StatusRuntimeException e) {
-          logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
-          return Status.ERROR;
-        }
-        logger.info("Response: " + response.getPair());
-      }
+      // NOTE: The current version of the benchmark doesn't seem to ever call this with non-null
+      // fields.
+      return Status.BAD_REQUEST;
     }
 
     return Status.OK;
   }
 
   /**
-   * TODO How do we deal with scan?
+   * TODO How do we deal with scan? Is it needed?
    *
    * @param table The name of the table
    * @param startkey The record key of the first record to read.
@@ -184,12 +170,10 @@ public class BenFSClient extends DB {
     // Add a unique key-value pair for each field in the values map.
     for (Map.Entry<String, ByteIterator> fieldValuePair : values.entrySet()) {
       ByteString value = ByteString.copyFrom(fieldValuePair.getValue().toArray());
-      String uniqueKey = key + fieldValuePair.getKey();
-      Status insertStatus = insertSingleKVPair(uniqueKey, value);
+      Status s = insertSingleKVPair(key, value);
 
-      // Return if an error or sorts occurs.
-      if (insertStatus != Status.OK) {
-        return insertStatus;
+      if (s == Status.ERROR) {
+        return Status.ERROR;
       }
     }
 
@@ -225,7 +209,7 @@ public class BenFSClient extends DB {
       return Status.ERROR;
     }
 
-    //    logger.log(Level.INFO, "Inserted: "+key+","+new String(value.toByteArray()));
+//    logger.log(Level.INFO, "Inserted: " + key + "," + new String(value.toByteArray()));
     return Status.OK;
   }
 
@@ -243,9 +227,5 @@ public class BenFSClient extends DB {
       return Status.ERROR;
     }
     return Status.OK;
-  }
-
-  public static void main(String args[]) {
-    BenFSClient client = new BenFSClient("localhost", 50051);
   }
 }
