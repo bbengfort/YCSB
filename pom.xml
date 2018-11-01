@@ -107,6 +107,7 @@ LICENSE file.
     <tarantool.version>1.6.5</tarantool.version>
     <thrift.version>0.8.0</thrift.version>
     <voldemort.version>0.81</voldemort.version>
+    <benfs.version>0.5</benfs.version>
   </properties>
 
   <modules>
@@ -161,6 +162,7 @@ LICENSE file.
     <module>solr6</module>
     <module>tarantool</module>
     <!--<module>voldemort</module>-->
+    <module>benfs</module>
   </modules>
 
   <build>
